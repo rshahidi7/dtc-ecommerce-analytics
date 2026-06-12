@@ -1,0 +1,4 @@
+# $0-monetary cohort: operational profile
+
+**99 customers** placed only $0 orders (114 orders total), spanning **2023-02-22 to 2025-04-08**. They contribute $0 (approx 0%) of revenue. Operationally this is not a customer segment but the client's **product-seeding / sampling program**: the discount codes are dominated by influencer/UGC/brand-collaboration comps (32 orders), free-sample and giveaway codes (46), affiliate comps (7), gifts (8), and a handful of wholesale/physician/internal samples (4); 17 orders carry no code (manually zeroed comps). The items shipped are full-size products and sample SKUs (top families: Product C, Product A, Product D, Product B). These are **influencer/PR/sample comps, not test orders or service refunds**, and are excluded from the paying-base segmentation below.
+

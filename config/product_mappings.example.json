@@ -1,0 +1,16 @@
+{
+  "_comment": "Example product-family mapping that works with the synthetic sample dataset (data/sample/orders_sample.csv). The committed pipeline falls back to this file when config/product_mappings.json is absent, so the repo is runnable end-to-end on the sample after cloning. To run on a real dataset, copy this file to product_mappings.json and adapt the substrings. A rule matches when ALL its conditions match; a condition matches when the chosen field (name/sku/vendor) contains ANY of the listed substrings, case-insensitive. Rules are evaluated top to bottom; the first match wins.",
+  "exclude": [
+    {"conditions": [{"field": "vendor", "contains": ["Package Protection Vendor"]}]},
+    {"conditions": [{"field": "name", "contains": ["PACKAGE PROTECTION"]}]},
+    {"conditions": [{"field": "name", "contains": ["GIFT CARD"]}]}
+  ],
+  "families": [
+    {"family": "Product A", "conditions": [{"field": "name", "contains": ["PRODUCT A"]}]},
+    {"family": "Product B", "conditions": [{"field": "name", "contains": ["PRODUCT B"]}]},
+    {"family": "Product C", "conditions": [{"field": "name", "contains": ["PRODUCT C"]}]},
+    {"family": "Product D", "conditions": [{"field": "name", "contains": ["PRODUCT D"]}]},
+    {"family": "Product E", "conditions": [{"field": "name", "contains": ["PRODUCT E"]}]}
+  ],
+  "fallback_family": "Other"
+}

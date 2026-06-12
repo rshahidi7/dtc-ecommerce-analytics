@@ -1,0 +1,40 @@
+# Data: raw Shopify exports contain customer PII (emails). Do not commit.
+# Exception: the synthetic sample under data/sample/ is safe to track.
+data/*
+!data/sample/
+
+# Product-family mapping. The real mapping (real product, vendor, and SKU
+# strings) is private and gitignored; the generic example that matches the
+# synthetic sample is tracked so the pipeline runs out of the box.
+config/product_mappings.json
+
+# Power BI: .pbix reports are deliverables and ARE tracked. But raw data
+# sources dropped into powerbi/ (extracts, .csv/.xlsx feeding the model) are not.
+powerbi/data/
+powerbi/*.csv
+powerbi/*.xlsx
+powerbi/*.xls
+
+# ML outputs (ml/outputs/) are regenerable, but the charts, written summaries,
+# and anonymized (hashed-email) CSVs are tracked as portfolio artifacts so the
+# repo is browsable on GitHub without running the pipeline. Only the two CSVs
+# keyed by REAL email contain PII; those stay ignored.
+ml/outputs/customer_segments.csv
+ml/outputs/repeat_predictions.csv
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.python-version
+
+# Local Claude Code settings
+.claude/settings.local.json
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+.Rhistory
