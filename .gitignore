@@ -8,6 +8,11 @@ data/*
 # synthetic sample is tracked so the pipeline runs out of the box.
 config/product_mappings.json
 
+# Local-only source files (e.g. the raw SQL with real product names before
+# anonymization). The ".local" infix marks a file as never-commit.
+*.local
+*.local.*
+
 # Power BI: .pbix reports are deliverables and ARE tracked. But raw data
 # sources dropped into powerbi/ (extracts, .csv/.xlsx feeding the model) are not.
 powerbi/data/
