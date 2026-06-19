@@ -78,7 +78,7 @@ Put the CSV exports in a `data/` folder. The primary file is `orders.csv` (raw S
 
 ## Known Facts From Prior Analysis (for sanity-checking)
 
-- About 1,510 unique customers; about 1,755 orders with a valid customer and date.
+- About 1,505 unique customers; about 1,621 orders with a valid customer and date.
 - About 178 repeat customers, roughly an **11.8% repeat rate**.
 - Median first-order total around $63.81.
 - First-order attributes (product, order value, discount use, basket size, email opt-in) all showed repeat rates within about 1 to 2 points of the 11.8% baseline, i.e. weak or no association with retention. Match these numbers when you reproduce the customer table; if you diverge materially, flag it.

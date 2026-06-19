@@ -6,7 +6,7 @@ End-to-end analytics on a DTC e-commerce brand's Shopify data, from BI report to
 
 This project analyzes real Shopify order data from a direct-to-consumer e-commerce brand (referred to here as the client), and was built as both a client deliverable for the company's CEO and a portfolio piece. Product names and other identifying details have been anonymized.
 
-The core problem is retention. Across 1,505 customers and 1,755 orders, only about 12 percent of customers ever place a second order (181 repeat customers), yet returning customers are worth roughly twice as much as one-time buyers. The business depends on a small group of repeaters that has been hard to grow.
+The core problem is retention. Across 1,505 customers and 1,621 orders, only about 12 percent of customers ever place a second order (181 repeat customers), yet returning customers are worth roughly twice as much as one-time buyers. The business depends on a small group of repeaters that has been hard to grow.
 
 The more useful result is why that gap exists. A repeat-purchase classifier trained only on first-order attributes (what was bought, order value, discount use, basket size, marketing opt-in, location, and season) lands at a ROC-AUC near 0.51, which is essentially chance. Nothing observable about a customer's first purchase predicts whether they come back. The retention gap is structural rather than a matter of attracting better first-time buyers.
 
