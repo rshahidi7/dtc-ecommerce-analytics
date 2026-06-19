@@ -18,8 +18,8 @@ That shifts the strategy away from trying to pre-select high-retention customers
 ## What is in the repo
 
 - `sql/` holds the SQL transformations that clean the raw Shopify exports and reshape them into the modeled tables behind the report.
-- `powerbi/` holds the Power BI report: a star schema with dimension tables and geographic analysis, presented to the CEO.
-- `deck/` is the executive presentation of the findings and recommendations.
+- `powerbi/` holds the Power BI report deliverable: a PDF export of the full report (`power-bi-report.pdf`) and key dashboard screenshots (executive summary, geographic performance, retention cohorts). The report is built on the star schema in `sql/`, with cohort and geographic analyses. The source `.pbix` is omitted to avoid distributing client data; the PDF and screenshots are the published artifacts.
+- `deck/` holds the executive presentation (`executive-presentation.pdf`) delivered to the CEO, walking through the retention finding and the recommended lifecycle plays.
 - `ml/` is the data-science layer: Phase 1 covers customer segmentation and Phase 2 covers the repeat-purchase classifier. Generated charts and tables land in `ml/outputs/`, where the tracked files are aggregate charts, written summaries, and anonymized (hashed-email) extracts. The raw customer files stay out of the repo.
 
 ## Methodology notes
