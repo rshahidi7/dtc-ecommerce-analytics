@@ -15,12 +15,22 @@ That shifts the strategy away from trying to pre-select high-retention customers
 - A 31 to 90 day post-purchase email sequence aimed at recent one-time buyers, to earn the critical second order before they lapse.
 - A win-back campaign aimed at customers who bought once and then went quiet, with a reactivation offer.
 
+The executive summary page from the Power BI report delivered to the CEO:
+
+![Executive summary page showing key KPIs: $134K total revenue, 12% repeat rate, $94 average LTV, and 1.4% conversion rate, with the headline finding that the business is acquiring customers efficiently but failing to retain them.](powerbi/01-executive-summary.png)
+
 ## What is in the repo
 
 - `sql/` holds the SQL transformations that clean the raw Shopify exports and reshape them into the modeled tables behind the report.
 - `powerbi/` holds the Power BI report deliverable: a PDF export of the full report (`power-bi-report.pdf`) and key dashboard screenshots (executive summary, geographic performance, retention cohorts). The report is built on the star schema in `sql/`, with cohort and geographic analyses. The source `.pbix` is omitted to avoid distributing client data; the PDF and screenshots are the published artifacts.
 - `deck/` holds the executive presentation (`executive-presentation.pdf`) delivered to the CEO, walking through the retention finding and the recommended lifecycle plays.
 - `ml/` is the data-science layer: Phase 1 covers customer segmentation and Phase 2 covers the repeat-purchase classifier. Generated charts and tables land in `ml/outputs/`, where the tracked files are aggregate charts, written summaries, and anonymized (hashed-email) extracts. The raw customer files stay out of the repo.
+
+## Geographic analysis
+
+The business-facing deliverable is the Power BI report. Geographic performance is a core view, breaking down revenue and order concentration across U.S. states and regions.
+
+![Geographic performance dashboard showing revenue concentration by state, with the South as the top region and California as the top state by revenue.](powerbi/02-geographic-performance.png)
 
 ## Methodology notes
 
@@ -32,7 +42,9 @@ A few choices are worth calling out, since how the analysis was done matters as 
 - Subtotal in Phase 2, Total in Phase 1. Phase 1 measured economic value, so it used order Total including shipping and tax. Phase 2 predicts behavior and wants basket value independent of where the order shipped, so it uses Subtotal. The difference is deliberate, not an inconsistency.
 - Reporting a null result honestly. A near-chance model is the correct and expected outcome here, and the flat feature importances are the evidence that the retention gap is structural. No leaky features were engineered to manufacture a more impressive number.
 
-## Key visuals
+## ML pipeline visuals
+
+These charts come from the Python segmentation and classifier pipeline.
 
 Revenue share by segment. The loyal core is about 12 percent of paying customers but a quarter of revenue, while recent one-time buyers are the largest near-term opportunity.
 
